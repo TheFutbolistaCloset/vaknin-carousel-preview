@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>מדריך למתחילים ל-Claude Code · PDF לאישור · vaknin.ai</title>
 <style>
-  :root{ --bg:#F2EEE6; --ink:#111111; --soft:#555049; --accent:#2C49F5; }
+  :root{ --bg:#F2EEE6; --ink:#111111; --soft:#555049; --accent:#2C49F5; --card:#fff; }
   *{ box-sizing:border-box; -webkit-text-size-adjust:100%; }
   body{ margin:0; background:var(--bg); color:var(--ink);
     font-family:-apple-system,"Heebo",system-ui,Arial,sans-serif; }
   .wrap{ max-width:680px; margin:0 auto; padding:22px 14px 64px; }
-  header{ text-align:center; padding:14px 6px 18px; }
+  header{ text-align:center; padding:14px 6px 12px; }
   header .wm{ font-weight:800; font-size:20px; direction:ltr; }
   header .wm .ai{ border-bottom:3px solid var(--accent); }
   header h1{ font-size:21px; font-weight:800; margin:12px 0 4px; line-height:1.35; }
@@ -18,10 +18,25 @@
   .dl{ display:inline-block; margin:14px auto 4px; background:var(--accent); color:#fff;
     font-weight:800; font-size:16px; text-decoration:none; padding:13px 26px; border-radius:10px;
     box-shadow:5px 5px 0 0 var(--ink); }
+
+  /* interactive CLAUDE.md copy block */
+  .copyblock{ background:var(--card); border:2.5px solid var(--ink); border-radius:12px;
+    box-shadow:7px 7px 0 0 var(--accent); padding:14px 16px 16px; margin:18px 0 26px; }
+  .cbhead{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .cbtitle{ font-weight:800; font-size:16px; } .cbtitle .en{ direction:ltr; }
+  #cpbtn{ font-family:inherit; font-weight:800; font-size:14px; color:#fff; background:var(--ink);
+    border:none; border-radius:8px; padding:9px 18px; cursor:pointer; }
+  #cpbtn.done{ background:var(--accent); }
+  pre#tpl{ direction:ltr; text-align:left; margin:0; font-family:"SF Mono",Menlo,"Roboto Mono",monospace;
+    font-size:12.5px; line-height:1.55; background:#F7F4EE; border:1.5px solid rgba(17,17,17,.15);
+    border-radius:8px; padding:14px 16px; overflow-x:auto; white-space:pre; }
+  .cbnote{ font-size:12.5px; color:var(--soft); margin:9px 2px 0; }
+
   figure{ margin:0 0 16px; }
   figure img{ width:100%; height:auto; display:block; border-radius:10px;
     border:1px solid rgba(17,17,17,.14); box-shadow:0 6px 22px rgba(17,17,17,.12); }
   .num{ font-size:12px; color:var(--soft); margin:0 4px 6px; font-weight:700; direction:ltr; text-align:left; }
+  h2.sec{ font-size:17px; font-weight:800; margin:6px 2px 12px; }
   footer{ text-align:center; color:var(--soft); font-size:13px; padding-top:18px; }
 </style>
 </head>
@@ -30,10 +45,37 @@
     <header>
       <div class="wm">vaknin<span class="ai">.ai</span></div>
       <h1>מדריך למתחילים ל-Claude Code</h1>
-      <p>תצוגה לאישור · 8 עמ' A4 · גוללים למטה</p>
+      <p>תצוגה לאישור · 8 עמ' A4</p>
       <a class="dl" href="claude-code-guide.pdf">📄 פתח / הורד את ה-PDF</a>
     </header>
 
+    <section class="copyblock">
+      <div class="cbhead">
+        <span class="cbtitle">תבנית <span class="en">CLAUDE.md</span> — להעתקה</span>
+        <button id="cpbtn" onclick="copyTpl()">העתק</button>
+      </div>
+      <pre id="tpl"># הפרויקט שלי
+
+## מה זה
+&lt;תיאור קצר של מה הפרויקט עושה&gt;
+
+## פקודות
+- build: &lt;פקודת הבנייה&gt;
+- test:  &lt;פקודת הבדיקות&gt;
+- run:   &lt;פקודת ההרצה&gt;
+
+## כללים
+- ענה והערות בעברית
+- אל תיגע בקבצים: .env, &lt;קבצים רגישים&gt;
+- סגנון: &lt;קונבנציות הקוד שלי&gt;
+
+## מבנה
+- קוד עיקרי: src/
+- בדיקות:    test/</pre>
+      <p class="cbnote">לוחצים "העתק", מדביקים בקובץ <span style="direction:ltr">CLAUDE.md</span> בשורש הפרויקט, וממלאים את הסוגריים.</p>
+    </section>
+
+    <h2 class="sec">כל 8 העמודים</h2>
     <figure><div class="num">עמ' 1 / 8 · שער</div><img src="guide-1.png" alt="עמוד 1"></figure>
     <figure><div class="num">עמ' 2 / 8 · מה זה + התקנה</div><img src="guide-2.png" alt="עמוד 2"></figure>
     <figure><div class="num">עמ' 3 / 8 · טעויות 1-3</div><img src="guide-3.png" alt="עמוד 3"></figure>
@@ -45,5 +87,17 @@
 
     <footer>vaknin.ai · מדריך למתחילים ל-Claude Code (תצוגה לאישור)</footer>
   </div>
+
+  <script>
+  function copyTpl(){
+    var t=document.getElementById('tpl').innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      var b=document.getElementById('cpbtn'); b.textContent='הועתק ✓'; b.classList.add('done');
+      setTimeout(function(){ b.textContent='העתק'; b.classList.remove('done'); },1800);
+    }).catch(function(){
+      var b=document.getElementById('cpbtn'); b.textContent='בחרו והעתיקו ידנית';
+    });
+  }
+  </script>
 </body>
 </html>
