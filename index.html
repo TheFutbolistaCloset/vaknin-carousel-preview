@@ -2,44 +2,90 @@
 <html lang="he" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>vaknin.ai · קרוסלה לאישור — 5 הטעויות ב-Claude Code</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vaknin.ai — פוסט 1 (CLAUDE.md + בוריס צ'רני) + מגנט לידים</title>
 <style>
-  :root{ --bg:#F2EEE6; --ink:#111111; --soft:#555049; --accent:#2C49F5; }
-  *{ box-sizing:border-box; -webkit-text-size-adjust:100%; }
-  body{ margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,"Heebo","Rubik",system-ui,Arial,sans-serif; }
-  .wrap{ max-width:560px; margin:0 auto; padding:22px 16px 64px; }
-  header{ text-align:center; padding:14px 6px 22px; }
-  header .wm{ font-weight:800; font-size:20px; letter-spacing:-0.01em; direction:ltr; }
-  header .wm .ai{ border-bottom:3px solid var(--accent); }
-  header h1{ font-size:21px; font-weight:800; margin:12px 0 4px; line-height:1.35; }
-  header p{ font-size:14px; color:var(--soft); margin:0; }
-  figure{ margin:0 0 18px; }
-  figure img{ width:100%; height:auto; display:block; border-radius:14px;
-    border:1px solid rgba(17,17,17,.12); box-shadow:0 6px 22px rgba(17,17,17,.10); }
-  .num{ font-size:12px; color:var(--soft); margin:0 4px 6px; font-weight:700; direction:ltr; text-align:left; }
-  footer{ text-align:center; color:var(--soft); font-size:13px; padding-top:18px; line-height:1.6; }
+  :root{ --paper:#F6F1E2; --ink:#141210; --coral:#D97757; --blue:#2C49F5; --soft:#5A544B; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Heebo','Assistant',-apple-system,system-ui,sans-serif;background:var(--ink);color:var(--paper);line-height:1.55;padding:0 0 80px}
+  header{padding:34px 20px 22px;text-align:center;border-bottom:1px solid rgba(246,241,226,.12);background:radial-gradient(90% 120% at 50% 0%,rgba(217,119,87,.16),transparent 60%)}
+  header h1{font-size:26px;font-weight:900}
+  header .wm{color:var(--coral);text-decoration:underline;text-underline-offset:3px}
+  header p{color:rgba(246,241,226,.7);font-size:15px;margin-top:8px}
+  .wrap{max-width:620px;margin:0 auto;padding:0 16px}
+  .sec{margin-top:38px}
+  .sec-h{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:0 4px 6px}
+  .sec-h .dot{width:11px;height:11px;border-radius:3px;background:var(--coral);flex:none}
+  .sec-sub{color:rgba(246,241,226,.62);font-size:14px;margin:0 4px 16px}
+  .grid{display:flex;flex-direction:column;gap:16px}
+  figure{background:#000;border-radius:16px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.4);position:relative}
+  figure img{width:100%;display:block}
+  figure figcaption{position:absolute;top:10px;inset-inline-start:10px;background:rgba(20,18,16,.82);color:var(--paper);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#1a120e;font-weight:900;font-size:16px;text-decoration:none;padding:13px 22px;border-radius:12px;margin:2px 4px}
+  .btn.ghost{background:transparent;color:var(--paper);border:2px solid rgba(246,241,226,.3)}
+  .cap{background:#1A1613;border:1px solid rgba(217,119,87,.3);border-radius:16px;padding:18px 18px 14px;margin:6px 4px 0}
+  .cap h3{font-size:15px;color:var(--coral);font-family:monospace;letter-spacing:.04em;margin-bottom:10px}
+  .cap pre{white-space:pre-wrap;font-family:inherit;font-size:15px;color:rgba(246,241,226,.9);line-height:1.6}
+  .cap button{margin-top:12px;background:var(--blue);color:#fff;border:0;font-weight:800;font-size:14px;padding:9px 16px;border-radius:9px;cursor:pointer}
+  .note{color:rgba(246,241,226,.5);font-size:13px;text-align:center;margin-top:26px}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="wm">vaknin<span class="ai">.ai</span></div>
-      <h1>5 הטעויות שעולות למתחילים ב-Claude Code</h1>
-      <p>תצוגה לאישור · גוללים למטה לכל 8 השקופיות</p>
-    </header>
+<header>
+  <h1>פוסט 1 — <span class="wm">vaknin.ai</span></h1>
+  <p>קרוסלת CLAUDE.md (7 שקופיות) + מגנט הלידים "בוריס↔גל" · תצוגה לאישור/תיקונים</p>
+</header>
 
-    <figure><div class="num">01 / 08 · שער</div><img src="slide-1.png" alt="שקופית 1"></figure>
-    <figure><div class="num">02 / 08 · התקנה</div><img src="slide-2.png" alt="שקופית 2"></figure>
-    <figure><div class="num">03 / 08 · טעות 1</div><img src="slide-3.png" alt="שקופית 3"></figure>
-    <figure><div class="num">04 / 08 · טעות 2</div><img src="slide-4.png" alt="שקופית 4"></figure>
-    <figure><div class="num">05 / 08 · טעות 3</div><img src="slide-5.png" alt="שקופית 5"></figure>
-    <figure><div class="num">06 / 08 · טעות 4</div><img src="slide-6.png" alt="שקופית 6"></figure>
-    <figure><div class="num">07 / 08 · טעות 5</div><img src="slide-7.png" alt="שקופית 7"></figure>
-    <figure><div class="num">08 / 08 · CTA</div><img src="slide-8.png" alt="שקופית 8"></figure>
+<div class="wrap">
 
-    <footer>vaknin.ai · תצוגה פנימית לאישור קופי + ויז'ואל</footer>
-  </div>
+  <section class="sec">
+    <div class="sec-h"><span class="dot"></span>הפוסט — קרוסלה (7 שקופיות)</div>
+    <div class="sec-sub">מחליקים מ-1 ל-7. שקופית 6 + ה-CTA הן החדשות (בוריס צ'רני + העקרונות).</div>
+    <div class="grid">
+      <figure><figcaption>1 · המלכודת</figcaption><img src="post-1.png" alt="שקופית 1"></figure>
+      <figure><figcaption>2 · הבעיה</figcaption><img src="post-2.png" alt="שקופית 2"></figure>
+      <figure><figcaption>3 · התובנה</figcaption><img src="post-3.png" alt="שקופית 3"></figure>
+      <figure><figcaption>4 · השיטה</figcaption><img src="post-4.png" alt="שקופית 4"></figure>
+      <figure><figcaption>5 · התוצאה</figcaption><img src="post-5.png" alt="שקופית 5"></figure>
+      <figure><figcaption>6 · המקצוענים ✦ חדש</figcaption><img src="post-6.png" alt="שקופית 6"></figure>
+      <figure><figcaption>7 · תורכם (CTA) ✦ עודכן</figcaption><img src="post-7.png" alt="שקופית 7"></figure>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="dot"></span>הקאפשן של הפוסט</div>
+    <div class="cap">
+      <h3>caption.txt</h3>
+      <pre id="cap">טוען…</pre>
+      <button onclick="copyCap(event)">העתק קאפשן</button>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><span class="dot"></span>מגנט הלידים (8 עמ')</div>
+    <div class="sec-sub">מה שנשלח ב-DM למי שכותב "הקשר": העקרונות של בוריס (EN) לצד התבנית שלי (HE) + הקובץ המלא.</div>
+    <div style="text-align:center;margin:4px 0 18px">
+      <a class="btn" href="vaknin-boris-gal.pdf" target="_blank">📄 פתח PDF מלא</a>
+      <a class="btn ghost" href="vaknin-boris-gal.pdf" download>⬇︎ הורד</a>
+    </div>
+    <div class="grid">
+      <figure><figcaption>1 · שער</figcaption><img src="magnet-1.png" alt="עמוד 1"></figure>
+      <figure><figcaption>2 · מי בוריס + CLAUDE.md</figcaption><img src="magnet-2.png" alt="עמוד 2"></figure>
+      <figure><figcaption>3 · כללי הזהב</figcaption><img src="magnet-3.png" alt="עמוד 3"></figure>
+      <figure><figcaption>4 · קורלציה 1–3</figcaption><img src="magnet-4.png" alt="עמוד 4"></figure>
+      <figure><figcaption>5 · קורלציה 4–6</figcaption><img src="magnet-5.png" alt="עמוד 5"></figure>
+      <figure><figcaption>6 · הקובץ (חלק 1)</figcaption><img src="magnet-6.png" alt="עמוד 6"></figure>
+      <figure><figcaption>7 · הקובץ (חלק 2)</figcaption><img src="magnet-7.png" alt="עמוד 7"></figure>
+      <figure><figcaption>8 · סגירה</figcaption><img src="magnet-8.png" alt="עמוד 8"></figure>
+    </div>
+  </section>
+
+  <p class="note">תצוגה זמנית · vaknin.ai · לאישור וסבב תיקונים</p>
+</div>
+
+<script>
+  fetch('caption.txt').then(r=>r.text()).then(t=>{document.getElementById('cap').textContent=t;});
+  function copyCap(e){navigator.clipboard.writeText(document.getElementById('cap').textContent).then(()=>{e.target.textContent='הועתק ✓';});}
+</script>
 </body>
 </html>
