@@ -22,13 +22,21 @@
   figure img{width:100%;display:block}
   figure figcaption{position:absolute;top:10px;inset-inline-start:10px;background:rgba(20,18,16,.82);color:var(--paper);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px)}
   .note{color:rgba(246,241,226,.5);font-size:13px;text-align:center;margin-top:26px}
-  .pending{background:#1A1613;border:1px dashed rgba(217,119,87,.4);border-radius:16px;padding:18px;margin:6px 4px 0;color:rgba(246,241,226,.72);font-size:14px}
+  .cap{background:#1A1613;border:1px solid rgba(217,119,87,.3);border-radius:16px;padding:18px 18px 14px;margin:6px 4px 0}
+  .cap h3{font-size:15px;color:var(--coral);font-family:monospace;letter-spacing:.04em;margin-bottom:10px}
+  .cap pre{white-space:pre-wrap;font-family:inherit;font-size:15.5px;color:rgba(246,241,226,.92);line-height:1.65}
+  .cap .tags{margin-top:10px;color:var(--blue);font-weight:700;font-size:14px}
+  ol.plan{list-style:none;counter-reset:p;margin:6px 4px 0;display:flex;flex-direction:column;gap:10px}
+  ol.plan li{counter-increment:p;background:#1A1613;border:1px solid rgba(246,241,226,.1);border-radius:12px;padding:12px 14px;font-size:15px;position:relative;padding-inline-start:46px}
+  ol.plan li::before{content:counter(p);position:absolute;inset-inline-start:12px;top:12px;width:24px;height:24px;border-radius:7px;background:var(--coral);color:#1a120e;font-weight:900;font-size:13px;display:flex;align-items:center;justify-content:center}
+  ol.plan b{color:var(--coral)}
+  ol.plan .bonus::before{background:var(--blue);color:#fff}
 </style>
 </head>
 <body>
 <header>
   <h1>פוסט 3 — <span class="wm">vaknin.ai</span></h1>
-  <p>Claude Fable 5 "הושבת וחזר" · קרוסלת Field Notes (8 שקופיות) · תצוגה לאישור/תיקונים</p>
+  <p>Claude Fable 5 "הושבת וחזר" · קרוסלת Field Notes (8 שקופיות) + קאפשן + מפת מגנט · תצוגה לאישור/תיקונים</p>
 </header>
 
 <div class="wrap">
@@ -49,11 +57,48 @@
   </section>
 
   <section class="sec">
-    <div class="sec-h"><span class="dot"></span>בהמשך</div>
-    <div class="pending">קאפשן + האשטגים ומגנט הלידים (PDF, חבילת פרומפטים, כריכה = המסקוט נוהג בפרארי) — יתווספו לתצוגה אחרי אישור הקרוסלה.</div>
+    <div class="sec-h"><span class="dot"></span>הקאפשן</div>
+    <div class="sec-sub">דרמה קודם · מלא עם הסיפור · CTA "פרארי" + שמירה + מעקב.</div>
+    <div class="cap">
+      <h3>caption</h3>
+      <pre>🇺🇸🚫 ממשלת ארה"ב השביתה מודל AI תוך ימים מהשקתו. והוא בדיוק חזר.
+
+הסיפור של Claude Fable 5, המודל הכי חזק ש-Anthropic הוציאה:
+9 ביוני - הושק. תוך ימים - ארה"ב הטילה עליו בקרות ייצוא (אותו כלי שמגביל יצוא שבבים), ו-Anthropic השביתה אותו לכולם. הטריגר? חוקרים של אמזון מצאו איך לעקוף את ההגנות שלו. 1 ביולי - חזר גלובלית.
+
+אבל מעבר לדרמה - מה הוא עושה בפועל? 3 דברים שהוא בונה כמעט לבד:
+
+1️⃣ מחקר ותוכנית עבודה שלמה - בריצה אחת
+2️⃣ כלי פרטי משלכם (כמו מעקב לקוחות) במקום מנוי חודשי יקר
+3️⃣ סוכן שרץ לבד דקות ארוכות על משימה מורכבת
+
+חשוב לדעת: זה מודל פרימיום ($10/$50 למיליון טוקן, פי-2 מהרגיל), והגרסה שחזרה מחמירה יותר. לא לכל דבר - אבל כשהמשימה גדולה, הוא הפרארי.
+
+👇 כתבו פרארי בתגובות ואשלח לכם ב-DM חבילת פרומפטים מלאה (PDF, בעברית) לכל השימושים + בונוסים.
+
+שמרו 🔖 לפעם הבאה · עקבו @vaknin.ai לעוד AI בעברית.
+ומה הייתם בונים ראשון עם מודל כזה? 👇</pre>
+      <div class="tags">#בינה_מלאכותית #AI #קלוד #ClaudeCode #בעברית</div>
+    </div>
   </section>
 
-  <p class="note">vaknin.ai · תצוגה זמנית לאישור</p>
+  <section class="sec">
+    <div class="sec-h"><span class="dot"></span>מגנט הלידים — מפה (PDF, ~10 עמ')</div>
+    <div class="sec-sub">"חבילת הפרומפטים של Fable 5" · כריכה = המסקוט נוהג בפרארי · נמסר ב-DM על "פרארי". זו המפה לפני הבנייה.</div>
+    <ol class="plan">
+      <li><b>כריכה</b> — המסקוט נוהג בפרארי 🏎️ + "חבילת הפרומפטים של Fable 5" + מאת גל · vaknin.ai</li>
+      <li><b>פתיח</b> — מה זו החבילה + Fable 5 בשורה אחת + איך להשתמש</li>
+      <li><b>שימוש 1 · מחקר/תוכנית</b> — הפרומפט המלא + מה עושה + איך להתאים + דוגמה ממולאת</li>
+      <li><b>שימוש 2 · כלי CRM משלכם</b> — כנ"ל (+ הערה כנה: דורש Claude Code)</li>
+      <li><b>שימוש 3 · סוכן שרץ לבד</b> — כנ"ל</li>
+      <li class="bonus"><b>בונוס · צ'קליסט "איזה מודל למתי"</b> — Fable 5 מול המודל הרגיל</li>
+      <li class="bonus"><b>בונוס · אנטומיה של פרומפט מנצח</b> — תפקיד→הקשר→משימה→פורמט + דוגמה</li>
+      <li class="bonus"><b>בונוס · מתי הוא יסרב לך</b> — Fable 5 מחמיר; מה לעשות (נופל חזרה ל-Opus 4.8)</li>
+      <li><b>סיום</b> — תורכם + שמרו/עקבו · vaknin.ai</li>
+    </ol>
+  </section>
+
+  <p class="note">vaknin.ai · תצוגה זמנית לאישור · המגנט עצמו (PDF) יתווסף אחרי אישור המפה</p>
 </div>
 </body>
 </html>
